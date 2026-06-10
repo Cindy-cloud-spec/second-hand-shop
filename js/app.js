@@ -215,6 +215,11 @@ function initCatalog() {
     }
   };
 
+  // URL-Parameter als initialen Filter setzen (z.B. ?kategorie=Schuhe)
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlKategorie = urlParams.get('kategorie');
+  if (urlKategorie) state.filters.kategorie = [urlKategorie];
+
   // Populate filter checkboxes from product data
   buildFilterOptions();
 
