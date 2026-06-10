@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alle verfügbaren Second-Hand-Artikel – Kleidung, Schuhe und Accessoires aus privatem Haushalt.">
+  <title>Alle Artikel – Kleiderschrank Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Kleiderschrank<span>&nbsp;Studio</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="catalog.html" class="active">Artikel</a></li>
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="merkliste.html" class="nav-merkliste">Merkliste<span class="merkliste-badge" style="display:none"></span></a></li>
+
+        <li><a href="contact.html" class="nav-cta">Anfrage stellen</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" role="dialog" aria-label="Mobilmenü">
+    <a href="catalog.html">Artikel</a>
+    <a href="about.html">Über mich</a>
+    <a href="faq.html">FAQ</a>
+    <a href="merkliste.html">Merkliste</a>
+
+    <a href="contact.html">Anfrage stellen</a>
+  </div>
+
+  <!-- Mobile Filter Bar -->
+  <div class="filter-mobile-bar">
+    <div class="container">
+      <div class="filter-mobile-inner">
+        <button class="filter-mobile-btn" data-open-filter aria-label="Filter öffnen">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4h12M4 8h8M6 12h4"/></svg>
+          Filter
+        </button>
+        <button class="filter-mobile-btn" id="mobile-sort-toggle">Sortieren</button>
+        <div id="mobile-active-chips"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Filter Drawer -->
+  <div class="filter-drawer" role="dialog" aria-modal="true" aria-label="Filteroptionen">
+    <div class="filter-drawer-overlay"></div>
+    <div class="filter-drawer-panel">
+      <div class="filter-drawer-handle"></div>
+      <div class="filter-drawer-header">
+        <h2 class="filter-drawer-title">Filter</h2>
+        <button class="filter-drawer-close" aria-label="Filter schließen">✕</button>
+      </div>
+
+      <!-- Filter Groups (mobile) -->
+      <div class="filter-group">
+        <div class="filter-group-header"><h3>Kategorie</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="kategorie"></div>
+      </div>
+
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Größe</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="größe"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Marke</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="marke"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Farbe</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="farbe"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Zustand</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="zustand"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Saison</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="saison"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Stil</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="stil"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Verfügbarkeit</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content" data-filter-field="verfügbarkeit"></div>
+      </div>
+      <div class="filter-group collapsed">
+        <div class="filter-group-header"><h3>Preis</h3><span class="filter-toggle-icon"></span></div>
+        <div class="filter-group-content">
+          <div class="price-range-inputs">
+            <div class="price-input-wrap">
+              <span>€</span>
+              <input type="number" id="price-min-mobile" placeholder="Von" class="price-input-min" min="0">
+            </div>
+            <div class="price-input-wrap">
+              <span>€</span>
+              <input type="number" id="price-max-mobile" placeholder="Bis" class="price-input-max" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;display:flex;gap:10px;">
+        <button class="btn btn-primary btn-full filter-drawer-close">Anzeigen</button>
+      </div>
+      <div style="margin-top:10px;text-align:center;">
+        <button class="filter-reset text-sm" data-reset-filters>Alle Filter zurücksetzen</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="catalog-layout">
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="filter-sidebar" aria-label="Filteroptionen">
+          <div class="filter-header">
+            <h2>Filter</h2>
+            <button class="filter-reset" data-reset-filters>Zurücksetzen</button>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-header" role="button" tabindex="0" aria-expanded="true">
+              <h3>Kategorie</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="kategorie"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-header" role="button" tabindex="0" aria-expanded="true">
+              <h3>Größe</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="größe"></div>
+          </div>
+
+          <div class="filter-group collapsed">
+            <div class="filter-group-header" role="button" tabindex="0">
+              <h3>Marke</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="marke"></div>
+          </div>
+
+          <div class="filter-group collapsed">
+            <div class="filter-group-header" role="button" tabindex="0">
+              <h3>Farbe</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="farbe"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-header" role="button" tabindex="0" aria-expanded="true">
+              <h3>Zustand</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="zustand"></div>
+          </div>
+
+          <div class="filter-group collapsed">
+            <div class="filter-group-header" role="button" tabindex="0">
+              <h3>Saison</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="saison"></div>
+          </div>
+
+          <div class="filter-group collapsed">
+            <div class="filter-group-header" role="button" tabindex="0">
+              <h3>Stil</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="stil"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-header" role="button" tabindex="0" aria-expanded="true">
+              <h3>Verfügbarkeit</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content" data-filter-field="verfügbarkeit"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-header" role="button" tabindex="0" aria-expanded="true">
+              <h3>Preis</h3><span class="filter-toggle-icon"></span>
+            </div>
+            <div class="filter-group-content">
+              <div class="price-range-inputs">
+                <div class="price-input-wrap">
+                  <span>€</span>
+                  <input type="number" id="price-min" placeholder="Von" min="0">
+                </div>
+                <div class="price-input-wrap">
+                  <span>€</span>
+                  <input type="number" id="price-max" placeholder="Bis" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Catalog -->
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <div class="catalog-results">
+              <span id="results-count">– Artikel</span>
+            </div>
+            <div class="catalog-toolbar-right">
+              <div class="search-wrap">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l3 3"/></svg>
+                <input
+                  type="search"
+                  id="search-input"
+                  class="search-input"
+                  placeholder="Suche nach Titel, Marke, Farbe …"
+                  aria-label="Artikel suchen"
+                >
+              </div>
+              <label for="sort-select" style="font-size:0.8125rem;font-weight:500;color:var(--color-text-muted);white-space:nowrap;">Sortieren:</label><select id="sort-select" class="sort-select" aria-label="Sortierung">
+                <option value="newest">Neueste zuerst</option>
+                <option value="price-asc">Preis aufsteigend</option>
+                <option value="price-desc">Preis absteigend</option>
+                <option value="oldest">Älteste zuerst</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="product-grid" id="product-grid" aria-live="polite" aria-label="Produktliste">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">Kleiderschrank Studio</span>
+        <nav class="footer-links" aria-label="Footernavigation">
+          <a href="catalog.html">Artikel</a>
+          <a href="about.html">Über mich</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Kontakt</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Privatverkauf – keine Rücknahme oder Gewährleistung, soweit gesetzlich zulässig.
+      </p>
+      <p class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Apply URL param pre-filters (e.g. from category links on homepage)
+    document.addEventListener('DOMContentLoaded', () => {
+      const params   = new URLSearchParams(window.location.search);
+      const kategorie = params.get('kategorie');
+      if (kategorie) {
+        // Pre-check the matching checkbox once the filter options are built
+        const observer = new MutationObserver(() => {
+          const cb = document.querySelector(
+            `.filter-checkbox[data-field="kategorie"][data-value="${kategorie}"]`
+          );
+          if (cb) {
+            cb.checked = true;
+            cb.dispatchEvent(new Event('change'));
+            observer.disconnect();
+          }
+        });
+        observer.observe(document.getElementById('product-grid'), { childList: true, subtree: true });
+      }
+    });
+  </script>
+</body>
+</html>

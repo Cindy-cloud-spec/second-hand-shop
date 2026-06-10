@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ausgewählte Second-Hand-Kleidung, Schuhe und Accessoires – gepflegt, ehrlich beschrieben und zu fairen Preisen.">
+  <title>Kleiderschrank – Second Hand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Kleiderschrank<span>&nbsp;Studio</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="catalog.html">Artikel</a></li>
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="merkliste.html" class="nav-merkliste">Merkliste<span class="merkliste-badge" style="display:none"></span></a></li>
+
+        <li><a href="contact.html" class="nav-cta">Anfrage stellen</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Menu -->
+  <div class="nav-mobile-menu" role="dialog" aria-label="Mobilmenü">
+    <a href="catalog.html">Artikel</a>
+    <a href="about.html">Über mich</a>
+    <a href="faq.html">FAQ</a>
+    <a href="merkliste.html">Merkliste</a>
+
+    <a href="contact.html">Anfrage stellen</a>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="hero-eyebrow">Second Hand · Privat</span>
+          <h1 class="hero-title">
+            Ausgewählte Stücke,<br>
+            <em>bereit für ein<br>neues Zuhause.</em>
+          </h1>
+          <p class="hero-description">
+            Kleidung aus meinem Kleiderschrank –
+            gepflegt, sorgfältig geprüft und zu fairen Preisen.
+          </p>
+          <div class="hero-actions">
+            <a href="catalog.html" class="btn btn-primary btn-lg">Alle Artikel ansehen</a>
+            <a href="about.html" class="btn btn-ghost">Mehr erfahren</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <span class="trust-dot"></span>
+              Versand oder persönliche Abholung in Osnabrück
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot"></span>
+              Faire Preise, kein Verhandlungsdruck
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot"></span>
+              Zahlung per PayPal, Überweisung oder bar
+            </div>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <img
+            src="images/hero.jpg"
+            alt="Ausgewählte Kleidungsstücke – blaues Kleid und gefalteter Stapel"
+            class="hero-photo"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="intro-strip">
+      <div class="container">
+        <div class="intro-strip-inner">
+          <div class="intro-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1l1.5 4.5H13l-3.75 2.75 1.5 4.75L7 10.25 3.25 13l1.5-4.75L1 5.5h4.5L7 1z"/></svg>
+            Alle Artikel aus privatem Haushalt
+          </div>
+          <div class="intro-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="12" height="9" rx="1"/><path d="M1 6h12"/></svg>
+            Sichere Zahlung per PayPal oder Überweisung
+          </div>
+          <div class="intro-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7l3.5 3.5 6.5-7"/></svg>
+            Zustand immer ehrlich angegeben
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Items -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Aktuelle Artikel</h2>
+          <a href="catalog.html" class="section-link">Alle ansehen →</a>
+        </div>
+        <div class="product-grid product-grid-4" id="featured-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" style="background:var(--color-bg-secondary);padding:56px 0;">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nach Kategorie suchen</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;">
+          <a href="catalog.html?kategorie=Kleidung" class="category-tile" style="display:flex;align-items:center;justify-content:center;padding:20px 16px;background:var(--color-bg-card);border:1px solid var(--color-border-light);border-radius:var(--radius-sm);text-align:center;text-decoration:none;transition:border-color 150ms ease;cursor:pointer;" onmouseover="this.style.borderColor='var(--color-text-muted)'" onmouseout="this.style.borderColor='var(--color-border-light)'">
+            <span style="font-size:0.875rem;font-weight:500;color:var(--color-text)">Kleidung</span>
+          </a>
+          <a href="catalog.html?kategorie=Schuhe" class="category-tile" style="display:flex;align-items:center;justify-content:center;padding:20px 16px;background:var(--color-bg-card);border:1px solid var(--color-border-light);border-radius:var(--radius-sm);text-align:center;text-decoration:none;transition:border-color 150ms ease;" onmouseover="this.style.borderColor='var(--color-text-muted)'" onmouseout="this.style.borderColor='var(--color-border-light)'">
+            <span style="font-size:0.875rem;font-weight:500;color:var(--color-text)">Schuhe</span>
+          </a>
+          <a href="catalog.html?kategorie=Taschen" class="category-tile" style="display:flex;align-items:center;justify-content:center;padding:20px 16px;background:var(--color-bg-card);border:1px solid var(--color-border-light);border-radius:var(--radius-sm);text-align:center;text-decoration:none;transition:border-color 150ms ease;" onmouseover="this.style.borderColor='var(--color-text-muted)'" onmouseout="this.style.borderColor='var(--color-border-light)'">
+            <span style="font-size:0.875rem;font-weight:500;color:var(--color-text)">Taschen</span>
+          </a>
+          <a href="catalog.html?kategorie=Accessoires" class="category-tile" style="display:flex;align-items:center;justify-content:center;padding:20px 16px;background:var(--color-bg-card);border:1px solid var(--color-border-light);border-radius:var(--radius-sm);text-align:center;text-decoration:none;transition:border-color 150ms ease;" onmouseover="this.style.borderColor='var(--color-text-muted)'" onmouseout="this.style.borderColor='var(--color-border-light)'">
+            <span style="font-size:0.875rem;font-weight:500;color:var(--color-text)">Accessoires</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">Kleiderschrank Studio</span>
+        <nav class="footer-links" aria-label="Footernavigation">
+          <a href="catalog.html">Artikel</a>
+          <a href="about.html">Über mich</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Kontakt</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Privatverkauf – keine Rücknahme oder Gewährleistung, soweit gesetzlich zulässig.
+      </p>
+      <p class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Render featured items (first 4 available)
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('featured-grid');
+      if (!grid || typeof products === 'undefined') return;
+      const featured = products
+        .filter(p => p.verfügbarkeit !== 'verkauft')
+        .slice(0, 4);
+      grid.innerHTML = featured.map(p => renderCard(p)).join('');
+
+      // Handle category links from homepage
+      document.querySelectorAll('[href^="catalog.html?kategorie="]').forEach(link => {
+        link.addEventListener('click', e => {
+          // Let the URL carry the filter param, catalog.html reads it on load
+        });
+      });
+    });
+  </script>
+</body>
+</html>

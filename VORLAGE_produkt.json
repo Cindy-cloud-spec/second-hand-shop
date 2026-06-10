@@ -1,0 +1,33 @@
+{
+  "_anleitung": {
+    "schritt1": "Diese Datei als 'produkt.json' in den neuen Artikelordner kopieren",
+    "schritt2": "Alle Felder ausfüllen (Pflichtfelder: titel, preis, kategorie, größe, zustand)",
+    "schritt3": "Fotos benennen: 01_vorne.jpg, 02_seite.jpg, 03_detail.jpg ... (Reihenfolge!)",
+    "schritt4": "Mängelfotos ans Ende: z.B. 04_maengel.jpg",
+    "schritt5": "import_artikel.py ausführen (oder Doppelklick auf neu_importieren.command)"
+  },
+
+  "titel":              "z.B. Sommerkleid, blau",
+  "preis":              15,
+  "ursprünglicher_preis": null,
+
+  "kategorie":          "Kleidung",
+  "unterkategorie":     "Kleider",
+
+  "marke":              "Zara",
+  "größe":              "M",
+  "farbe":              "Blau",
+  "material":           "100 % Baumwolle",
+
+  "zustand":            "Sehr guter Zustand",
+  "mängel":             "Keine",
+
+  "beschreibung":       "Ausführliche Beschreibung des Artikels...",
+  "besonderheiten":     "z.B. Rückenausschnitt, elastischer Bund",
+  "maße":               "z.B. Länge 95 cm, Breite 42 cm",
+
+  "saison":             "Frühling/Sommer",
+  "stil":               "casual",
+
+  "verfügbarkeit":      "verfügbar"
+}

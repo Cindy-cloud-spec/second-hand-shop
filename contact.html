@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kaufanfrage oder Frage zu einem Artikel stellen – Kleiderschrank Studio.">
+  <title>Anfrage stellen – Kleiderschrank Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Kleiderschrank<span>&nbsp;Studio</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="catalog.html">Artikel</a></li>
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="merkliste.html" class="nav-merkliste">Merkliste<span class="merkliste-badge" style="display:none"></span></a></li>
+
+        <li><a href="contact.html" class="nav-cta active">Anfrage stellen</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" role="dialog" aria-label="Mobilmenü">
+    <a href="catalog.html">Artikel</a>
+    <a href="about.html">Über mich</a>
+    <a href="faq.html">FAQ</a>
+    <a href="merkliste.html">Merkliste</a>
+
+    <a href="contact.html">Anfrage stellen</a>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="form-page">
+
+        <div class="form-page-header">
+          <h1 class="form-page-title">Anfrage stellen</h1>
+          <p class="form-page-subtitle">
+            Interesse an einem Artikel oder eine Frage? Ich melde mich so schnell wie möglich –
+            in der Regel innerhalb von 24 Stunden.
+          </p>
+        </div>
+
+        <!-- Success Message -->
+        <div class="form-success" id="form-success" role="alert" aria-live="polite">
+          <div class="form-success-title">Vielen Dank für deine Nachricht.</div>
+          <p class="form-success-text">
+            Ich habe deine Anfrage erhalten und melde mich in Kürze.
+            Bis dahin kannst du gerne weitere Artikel im Katalog stöbern.
+          </p>
+          <a href="catalog.html" class="btn btn-secondary" style="margin-top:20px;display:inline-flex;">
+            Zurück zum Katalog
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" name="anfrage" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="anfrage">
+          <input type="hidden" name="bot-field" style="display:none">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-group">
+              <label class="form-label" for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="Dein Name"
+                required
+                autocomplete="name"
+              >
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">E-Mail-Adresse</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="deine@email.de"
+                required
+                autocomplete="email"
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="telefon">
+              Telefonnummer <span>(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              class="form-control"
+              placeholder="+49 …"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gewünschte Artikel</label>
+
+            <!-- Ausgewählte Artikel als Chips -->
+            <div id="artikel-chips" style="display:flex;flex-wrap:wrap;gap:6px;min-height:36px;margin-bottom:8px;"></div>
+
+            <!-- Dropdown: weiteren Artikel hinzufügen -->
+            <select id="artikel-dropdown" class="form-control" style="color:var(--color-text-muted);">
+              <option value="">— weiteren Artikel hinzufügen —</option>
+            </select>
+
+            <!-- Verstecktes Feld für Formularübermittlung -->
+            <input type="hidden" id="artikel" name="artikel">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Bevorzugte Übergabe</label>
+            <div class="form-radio-group" role="radiogroup" aria-label="Übergabeart">
+              <label class="form-radio">
+                <input type="radio" name="übergabe" value="versand" checked>
+                Versand
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="übergabe" value="abholung">
+                Abholung in Osnabrück
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="übergabe" value="beides">
+                Beides möglich
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="nachricht">Nachricht</label>
+            <textarea
+              id="nachricht"
+              name="nachricht"
+              class="form-control"
+              rows="5"
+              placeholder="Deine Frage oder Kaufanfrage …"
+              required
+            ></textarea>
+          </div>
+
+          <label class="form-privacy">
+            <input type="checkbox" required name="datenschutz" id="datenschutz">
+            <span>
+              Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner
+              Anfrage verwendet werden. Die Daten werden nicht an Dritte weitergegeben
+              und nach Abschluss der Anfrage gelöscht.
+            </span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-lg">
+            Anfrage absenden
+          </button>
+
+          <p style="margin-top:16px;font-size:0.8125rem;color:var(--color-text-light);">
+            Kein Konto nötig. Keine Registrierung. Einfach anfragen.
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">Kleiderschrank Studio</span>
+        <nav class="footer-links" aria-label="Footernavigation">
+          <a href="catalog.html">Artikel</a>
+          <a href="about.html">Über mich</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Kontakt</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Privatverkauf – keine Rücknahme oder Gewährleistung, soweit gesetzlich zulässig.
+      </p>
+      <p class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Responsive two-column form collapses on mobile
+    const twoCol = document.querySelector('[style*="grid-template-columns:1fr 1fr"]');
+    function checkFormLayout() {
+      if (twoCol) {
+        twoCol.style.gridTemplateColumns = window.innerWidth < 540 ? '1fr' : '1fr 1fr';
+      }
+    }
+    checkFormLayout();
+    window.addEventListener('resize', checkFormLayout);
+  </script>
+</body>
+</html>

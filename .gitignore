@@ -1,0 +1,16 @@
+# API-Keys und Secrets – niemals ins Repository!
+.env
+.env.*
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporäre Dateien
+*.tmp
+*.log
