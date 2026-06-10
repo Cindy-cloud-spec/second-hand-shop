@@ -690,8 +690,8 @@ function initContact() {
   form.addEventListener('submit', e => {
     e.preventDefault();
     const data = new FormData(form);
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString() })
+    fetch('https://formspree.io/f/mgobzrzr', { method: 'POST',
+      headers: { 'Accept': 'application/json' }, body: data })
       .then(() => {
         form.style.display = 'none';
         success.classList.add('visible');
